@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
 using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Components;
 using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Components.Account;
-using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data;
+using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security;
+using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,16 +28,16 @@ builder.Services.AddAuthentication(options =>
 	.AddIdentityCookies();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<SecurityDbContext>(options =>
 	options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-	.AddEntityFrameworkStores<ApplicationDbContext>()
+builder.Services.AddIdentityCore<User>(options => options.SignIn.RequireConfirmedAccount = true)
+	.AddEntityFrameworkStores<SecurityDbContext>()
 	.AddSignInManager()
 	.AddDefaultTokenProviders();
 
-builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+builder.Services.AddSingleton<IEmailSender<User>, IdentityNoOpEmailSender>();
 
 var app = builder.Build();
 
