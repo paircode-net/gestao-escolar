@@ -20,7 +20,16 @@
   
   
   <ItemGroup>
-    <Folder Include="Data\GestaoEscolar\" />
+    <Folder Include="Core\Application\GestaoEscolar\Commands\" />
+    <Folder Include="Core\Application\GestaoEscolar\Queries\" />
+    <Folder Include="Core\Application\GestaoEscolar\Notifications\" />
+    <Folder Include="Core\Domain\Education\Specifications\" />
+    <Folder Include="Core\Domain\Education\Services\" />
+    <Folder Include="Core\Domain\Education\Resources\" />
+    <Folder Include="Core\Domain\Education\Validations\DomainValidations\" />
+    <Folder Include="Core\Domain\Education\Validations\EntityValidations\" />
+    <Folder Include="Infrastructures\Data\Education\Migrations\" />
+    <Folder Include="Middleware\" />
   </ItemGroup>
 
 </Project>

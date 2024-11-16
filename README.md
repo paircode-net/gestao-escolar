@@ -7,8 +7,8 @@ Go to "PairCode.GestaoEscolar.Presentations.Web.MudBlazor" project folder and op
 > cd src/PairCode.GestaoEscolar.Presentations.Web.MudBlazor
 
 Add migration ex: InitialMigrationSecurityDbContext
-> dotnet ef --startup-project ../PairCode.GestaoEscolar.Presentations.Web.MudBlazor migrations add [Name of the migration]SecurityDbContext -c SecurityDbContext -o Data/Security/Migrations
-> dotnet ef --startup-project ../PairCode.GestaoEscolar.Presentations.Web.MudBlazor migrations add [Name of the migration]GestaoEscolarDbContext -c GestaoEscolarDbContext -o Data/GestaoEscolar/Migrations
+> dotnet ef --startup-project ../PairCode.GestaoEscolar.Presentations.Web.MudBlazor migrations add [Name of the migration]SecurityDbContext -c SecurityDbContext -o Infrastructures/Data/Security/Migrations
+> dotnet ef --startup-project ../PairCode.GestaoEscolar.Presentations.Web.MudBlazor migrations add [Name of the migration]EducationDbContext -c EducationDbContext -o Infrastructures/Data/Education/Migrations
 
 
 #### dotnet-ef install

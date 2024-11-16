@@ -4,8 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
 using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Components;
 using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Components.Account;
-using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security;
-using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities;
+using PairCode.GestaoEscolar.Core.Domain.Security.Entities;
+using PairCode.GestaoEscolar.Infrastructures.Data.Security;
+using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Infrastructures.Data.Education;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,8 +29,9 @@ builder.Services.AddAuthentication(options =>
 	.AddIdentityCookies();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<SecurityDbContext>(options =>
-	options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<SecurityDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<EducationDbContext>(options => options.UseSqlServer(connectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<User>(options => options.SignIn.RequireConfirmedAccount = true)

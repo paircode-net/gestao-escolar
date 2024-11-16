@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Components.Account.Pages;
 using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Components.Account.Pages.Manage;
-using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities;
+using PairCode.GestaoEscolar.Core.Domain.Security.Entities;
 using System.Security.Claims;
 using System.Text.Json;
 

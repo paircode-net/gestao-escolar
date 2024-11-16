@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities;
+using PairCode.GestaoEscolar.Core.Domain.Security.Entities;
 using System.Security.Claims;
 
 namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Components.Account

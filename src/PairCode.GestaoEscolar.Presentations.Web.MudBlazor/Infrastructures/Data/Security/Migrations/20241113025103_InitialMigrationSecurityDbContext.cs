@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Migrations
+namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Infrastructures.Data.Security.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigrationSecurityDbContext : Migration

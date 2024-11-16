@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities
+namespace PairCode.GestaoEscolar.Core.Domain.Security.Entities
 {
     // Add profile data for application users by adding properties to the User class
     public class User : IdentityUser

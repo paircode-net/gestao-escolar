@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities;
+using PairCode.GestaoEscolar.Core.Domain.Security.Entities;
 
-namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security
+namespace PairCode.GestaoEscolar.Infrastructures.Data.Security
 {
     public class SecurityDbContext : IdentityDbContext<User>
     {

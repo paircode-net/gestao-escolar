@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Identity;
-using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities;
+using PairCode.GestaoEscolar.Core.Domain.Security.Entities;
 
 namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Components.Account
 {

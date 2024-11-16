@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security;
+using PairCode.GestaoEscolar.Infrastructures.Data.Security;
 
 #nullable disable
 
-namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Migrations
+namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Infrastructures.Data.Security.Migrations
 {
     [DbContext(typeof(SecurityDbContext))]
-    [Migration("20241112060054_InitialMigrationSecurityDbContext")]
+    [Migration("20241113025103_InitialMigrationSecurityDbContext")]
     partial class InitialMigrationSecurityDbContext
     {
         /// <inheritdoc />
@@ -159,7 +159,7 @@ namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Migra
                     b.ToTable("AspNetUserTokens", "SecurityDb");
                 });
 
-            modelBuilder.Entity("PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities.User", b =>
+            modelBuilder.Entity("PairCode.GestaoEscolar.Core.Domain.Security.Entities.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -235,7 +235,7 @@ namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Migra
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities.User", null)
+                    b.HasOne("PairCode.GestaoEscolar.Core.Domain.Security.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -244,7 +244,7 @@ namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Migra
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities.User", null)
+                    b.HasOne("PairCode.GestaoEscolar.Core.Domain.Security.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -259,7 +259,7 @@ namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Migra
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities.User", null)
+                    b.HasOne("PairCode.GestaoEscolar.Core.Domain.Security.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -268,7 +268,7 @@ namespace PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Migra
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("PairCode.GestaoEscolar.Presentations.Web.MudBlazor.Data.Security.Entities.User", null)
+                    b.HasOne("PairCode.GestaoEscolar.Core.Domain.Security.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
